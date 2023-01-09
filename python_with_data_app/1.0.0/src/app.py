@@ -15,7 +15,7 @@ class PythonPlayground(AppBase):
         :param logger:
         :param console_logger:
         """
-        super().__init__(redis, logger, console_logger=None)
+        super().__init__(redis, logger, console_logger)
 
     def create_file(self, filename, data):
         print("Inside function")
