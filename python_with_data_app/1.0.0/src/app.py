@@ -14,6 +14,20 @@ class PythonPlayground(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
+    def create_file(self, filename, data):
+        print("Inside function")
+        filedata = {
+            "filename": filename,
+            "data": data,
+        }
+
+        fileret = self.set_files([filedata])
+        value = {"success": True, "file_ids": fileret}
+        return value
+        #print("Done with upload function")
+
+        #return ("Successfully put your data in a file", filedata)
+
     def run_me_1(self, planType,tenantID,clientID,clientSecret):
         #Poll last 10 min Office365
         #Parse json_data with key value data
