@@ -1,3 +1,6 @@
+import json
+
+
 from walkoff_app_sdk.app_base import AppBase
 
 class PythonPlayground(AppBase):
@@ -12,7 +15,7 @@ class PythonPlayground(AppBase):
         :param logger:
         :param console_logger:
         """
-        super().__init__(redis, logger, console_logger)
+        super().__init__(redis, logger, console_logger=None)
 
     def create_file(self, filename, data):
         print("Inside function")
@@ -20,7 +23,6 @@ class PythonPlayground(AppBase):
             "filename": filename,
             "data": data,
         }
-
         fileret = self.set_files([filedata])
         value = {"success": True, "file_ids": fileret}
         return value
