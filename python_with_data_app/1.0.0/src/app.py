@@ -30,6 +30,19 @@ class PythonPlayground(AppBase):
 
         #return ("Successfully put your data in a file", filedata)
 
+    def upload_excel_file(self):
+        filename = "excel1..xlsx"
+        data =
+        print("Inside function")
+        filedata = {
+            "filename": filename,
+            "data": data,
+        }
+        fileret = self.set_files([filedata])
+        value = {"success": True, "file_ids": fileret}
+        return value
+
+
     def run_me_1(self, planType,tenantID,clientID,clientSecret):
         #Poll last 10 min Office365
         #Parse json_data with key value data
