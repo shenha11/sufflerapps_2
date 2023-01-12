@@ -32,7 +32,7 @@ class PythonPlayground(AppBase):
 
     def upload_excel_file(self):
         filename = "excel1.csv"
-        data = open(r'files\file1.csv', "r")
+        data = open(r'files/file1.csv', "r")
         print(data.read())
         print("Inside function")
         filedata = {
