@@ -31,8 +31,9 @@ class PythonPlayground(AppBase):
         #return ("Successfully put your data in a file", filedata)
 
     def upload_excel_file(self):
-        filename = "excel1..xlsx"
-        data =
+        filename = "excel1.csv"
+        data = open(r'\files\file1.csv', "r")
+        print(f.read())
         print("Inside function")
         filedata = {
             "filename": filename,
