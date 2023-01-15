@@ -1,4 +1,5 @@
 import json
+import csv
 
 
 from walkoff_app_sdk.app_base import AppBase
@@ -29,12 +30,21 @@ class PythonPlayground(AppBase):
         #print("Done with upload function")
 
         #return ("Successfully put your data in a file", filedata)
+    def edit_the_text_file(path_file_read):
+        file = open(path_file, "r")
+        csvreader = csv.reader(file)
+        rows = []
+        for row in csvreader:
+            rows.append(row)
+        data= rows[0]+ ' \n'
+        list_row = rows[1:]
+        for r in list_row:
+            data += r[0] + ',' + r[1] + ' \n'
+        return data
 
     def upload_excel_file(self):
         filename = "excel1.csv"
-        data = open(r'files/file1.csv', "r")
-        print(data.read())
-        print("Inside function")
+        data = self.edit_the_text_file(r'files/file1.csv')
         filedata = {
             "filename": filename,
             "data": data,
