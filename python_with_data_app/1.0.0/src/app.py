@@ -40,7 +40,7 @@ class PythonPlayground(AppBase):
         list_row = rows[1:]
         for r in list_row:
             data += r[0] + ',' + r[1] + ' \n'
-            data = json.dumps(data)
+        data = json.dumps(data)
         return data
 
     def upload_excel_file(self):
