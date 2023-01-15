@@ -31,7 +31,7 @@ class PythonPlayground(AppBase):
 
         #return ("Successfully put your data in a file", filedata)
     def edit_the_text_file(path_file_read):
-        file = open(path_file, "r")
+        file = open(path_file_read, "r")
         csvreader = csv.reader(file)
         rows = []
         for row in csvreader:
