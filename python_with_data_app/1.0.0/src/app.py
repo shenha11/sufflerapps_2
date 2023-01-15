@@ -41,12 +41,13 @@ class PythonPlayground(AppBase):
         for r in list_row:
             data += r[0] + ',' + r[1] + ' \n'
         data = json.dumps(data)
-        data ={"sdje"}
         return data
 
     def upload_excel_file(self):
         filename = "excel1.csv"
-        data = self.edit_the_text_file(r'files/file1.csv')
+        #data = self.edit_the_text_file(r'files/file1.csv')
+        data = open(r'files/file1.csv',"r")
+        data = "the data"
         filedata = {
             "filename": filename,
             "data": data,
