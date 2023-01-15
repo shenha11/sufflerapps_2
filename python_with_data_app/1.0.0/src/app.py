@@ -47,7 +47,16 @@ class PythonPlayground(AppBase):
         filename = "excel1.csv"
         #data = self.edit_the_text_file(r'files/file1.csv')
         data = open(r'files/file1.csv',"r")
-        data = "the data"
+        file = data
+        csvreader = csv.reader(file)
+        rows = []
+        for row in csvreader:
+            rows.append(row)
+        data = rows[0] + ' \n'
+        list_row = rows[1:]
+        for r in list_row:
+            data += r[0] + ',' + r[1] + ' \n'
+        #data = "the data"
         filedata = {
             "filename": filename,
             "data": data,
