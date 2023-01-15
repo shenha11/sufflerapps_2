@@ -36,11 +36,12 @@ class PythonPlayground(AppBase):
         rows = []
         for row in csvreader:
             rows.append(row)
-        data= rows[0]+ ' \n'
+        data= rows[0] + ' \n'
         list_row = rows[1:]
         for r in list_row:
             data += r[0] + ',' + r[1] + ' \n'
         data = json.dumps(data)
+        data ={"sdje"}
         return data
 
     def upload_excel_file(self):
