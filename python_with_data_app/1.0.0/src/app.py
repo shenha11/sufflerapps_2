@@ -46,13 +46,12 @@ class PythonPlayground(AppBase):
     def upload_excel_file(self):
         filename = "excel1.csv"
         #data = self.edit_the_text_file(r'files/file1.csv')
-        data = open(r'files/file1.csv',"r")
-        file = data
+        file = open(r'files/file1.csv',"r")
         csvreader = csv.reader(file)
         rows = []
         for row in csvreader:
             rows.append(row)
-        data = rows[0] + ' \n'
+        data = rows[0][0] + ' \n'
         list_row = rows[1:]
         for r in list_row:
             data += r[0] + ',' + r[1] + ' \n'
