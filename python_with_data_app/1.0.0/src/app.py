@@ -61,7 +61,7 @@ class PythonPlayground(AppBase):
             "data": data,
         }
         fileret = self.set_files([filedata])
-        value = {"success": True, "file_ids": fileret}
+        value = {"success": True, "file_ids": fileret, "name_of_the_file": filename}
         return value
 
 
