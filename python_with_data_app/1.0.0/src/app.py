@@ -30,18 +30,20 @@ class PythonPlayground(AppBase):
         #print("Done with upload function")
 
         #return ("Successfully put your data in a file", filedata)
-    def edit_the_text_file(path_file_read):
-        file = open(path_file_read, "r")
-        csvreader = csv.reader(file)
-        rows = []
-        for row in csvreader:
-            rows.append(row)
-        data= rows[0] + ' \n'
-        list_row = rows[1:]
-        for r in list_row:
-            data += r[0] + ',' + r[1] + ' \n'
-        data = json.dumps(data)
-        return data
+    def edit_the_text_file(filename):
+        # file = open(path_file_read, "r")
+        # csvreader = csv.reader(file)
+        # rows = []
+        # for row in csvreader:
+        #     rows.append(row)
+        # data= rows[0] + ' \n'
+        # list_row = rows[1:]
+        # for r in list_row:
+        #     data += r[0] + ',' + r[1] + ' \n'
+        # data = json.dumps(data)
+        # return data
+        new_info = "this info from another function with" + filename
+        return new_info
 
     def upload_excel_file(self):
         filename = "excel1.csv"
@@ -61,7 +63,8 @@ class PythonPlayground(AppBase):
             "data": data,
         }
         fileret = self.set_files([filedata])
-        value = {"success": True, "file_ids": fileret, "name_of_the_file": filename}
+        new_info = self.edit_the_text_file(filename)
+        value = {"success": True, "file_ids": fileret, "name_of_the_file": filename, "info":new_info}
         return value
 
 
